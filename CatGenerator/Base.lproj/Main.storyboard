@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vo3-PJ-JuV">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cat Generate View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CatGenerateViewController" customModule="CatGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="K8S-oS-NnT">
+                                <rect key="frame" x="16" y="145" width="361" height="512"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="512" id="aLi-lW-ALB"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="v53-hD-cCE" appends="YES" id="82C-pW-yK7"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jyf-ns-egE">
+                                <rect key="frame" x="20" y="673" width="353" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Сгенерируй кота">
+                                    <color key="baseBackgroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="generateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="26Q-hO-dfz"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="mYp-Rh-4gj">
+                                <rect key="frame" x="186.66666666666666" y="680.66666666666663" width="20" height="20"/>
+                                <color key="tintColor" name="AccentColor"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jyf-ns-egE" secondAttribute="trailing" constant="20" id="5Sq-lF-pjW"/>
+                            <constraint firstItem="mYp-Rh-4gj" firstAttribute="centerY" secondItem="Jyf-ns-egE" secondAttribute="centerY" id="FXq-T4-g95"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K8S-oS-NnT" secondAttribute="trailing" constant="16" id="Qe9-x0-gCv"/>
+                            <constraint firstItem="K8S-oS-NnT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="ccI-Qo-qoB"/>
+                            <constraint firstItem="Jyf-ns-egE" firstAttribute="top" secondItem="K8S-oS-NnT" secondAttribute="bottom" constant="16" id="jk1-nO-GGq"/>
+                            <constraint firstItem="K8S-oS-NnT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="pAx-gB-TNO"/>
+                            <constraint firstItem="mYp-Rh-4gj" firstAttribute="centerX" secondItem="Jyf-ns-egE" secondAttribute="centerX" id="wEI-Jl-Fgh"/>
+                            <constraint firstItem="Jyf-ns-egE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="znd-Jl-CrY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vat-Mj-bYj"/>
+                    <connections>
+                        <outlet property="button" destination="Jyf-ns-egE" id="lVw-b7-vA2"/>
+                        <outlet property="catImage" destination="K8S-oS-NnT" id="Wd9-tf-k2g"/>
+                        <outlet property="indicator" destination="mYp-Rh-4gj" id="a43-Df-dq8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="v53-hD-cCE">
+                    <connections>
+                        <segue destination="kiK-x1-6xn" kind="presentation" identifier="OpenImage" id="K3g-Kx-mYV"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2034" y="-775"/>
+        </scene>
+        <!--Cat Rotator View Controller-->
+        <scene sceneID="ecE-8e-oDJ">
+            <objects>
+                <viewController id="kiK-x1-6xn" customClass="CatRotatorViewController" customModule="CatGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gcm-CM-6l7">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AE7-lW-qim">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="c7V-db-SGu" appends="YES" id="Zta-sN-4HV"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Azl-hR-xDa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AE7-lW-qim" firstAttribute="leading" secondItem="Azl-hR-xDa" secondAttribute="leading" id="9J5-x3-j0W"/>
+                            <constraint firstItem="Azl-hR-xDa" firstAttribute="trailing" secondItem="AE7-lW-qim" secondAttribute="trailing" id="ZBq-cc-Qex"/>
+                            <constraint firstItem="AE7-lW-qim" firstAttribute="top" secondItem="Azl-hR-xDa" secondAttribute="top" id="rKx-QY-FDZ"/>
+                            <constraint firstItem="Azl-hR-xDa" firstAttribute="bottom" secondItem="AE7-lW-qim" secondAttribute="bottom" id="v5K-lK-7De"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gesture" destination="c7V-db-SGu" id="Muq-iJ-2Eb"/>
+                        <outlet property="imageView" destination="AE7-lW-qim" id="1yh-Yj-chm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2kJ-x5-zem" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <rotationGestureRecognizer id="c7V-db-SGu"/>
+            </objects>
+            <point key="canvasLocation" x="3442" y="-398"/>
+        </scene>
+        <!--Котик говорит!-->
+        <scene sceneID="CnG-vd-RtK">
+            <objects>
+                <navigationController id="bYH-7e-1kA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Котик говорит!" image="text.bubble" catalog="system" selectedImage="text.bubble.fill" id="nL8-jl-neV">
+                        <color key="badgeColor" name="AccentColor"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mb0-WJ-E5y">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="u1I-yy-nU6" kind="relationship" relationship="rootViewController" id="Wex-qF-ck7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jp0-TW-Eb5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="975" y="16"/>
+        </scene>
+        <!--Texted Cat Generate View Controller-->
+        <scene sceneID="ELh-u7-hhK">
+            <objects>
+                <viewController id="u1I-yy-nU6" customClass="TextedCatGenerateViewController" customModule="CatGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ymi-8G-YJD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KTx-2e-eCY">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8T-2x-tYL">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="666"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="YW5-Jq-PKp">
+                                                <rect key="frame" x="20" y="42" width="353" height="512"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="512" id="bU6-5S-pJp"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="IIJ-Iu-0qr" appends="YES" id="paX-Xn-4MG"/>
+                                                </connections>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qh0-pQ-t9h">
+                                                <rect key="frame" x="20" y="612" width="353" height="35"/>
+                                                <color key="tintColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Сгенерируй кота"/>
+                                                <connections>
+                                                    <action selector="generateButtonTapped:" destination="u1I-yy-nU6" eventType="touchUpInside" id="0DX-gl-uM5"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Котик говорит..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9nZ-Wg-z2u">
+                                                <rect key="frame" x="20" y="566" width="353" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="checkTextField" destination="u1I-yy-nU6" eventType="valueChanged" id="slQ-DX-7qW"/>
+                                                </connections>
+                                            </textField>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="BcU-0N-TTi">
+                                                <rect key="frame" x="186.66666666666666" y="619.66666666666663" width="20" height="20"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Qh0-pQ-t9h" firstAttribute="top" secondItem="9nZ-Wg-z2u" secondAttribute="bottom" constant="12" id="AV8-5v-wb5"/>
+                                            <constraint firstAttribute="trailing" secondItem="Qh0-pQ-t9h" secondAttribute="trailing" constant="20" id="BL5-0B-9ux"/>
+                                            <constraint firstItem="9nZ-Wg-z2u" firstAttribute="leading" secondItem="E8T-2x-tYL" secondAttribute="leading" constant="20" id="GH0-Gs-sm1"/>
+                                            <constraint firstItem="Qh0-pQ-t9h" firstAttribute="leading" secondItem="E8T-2x-tYL" secondAttribute="leading" constant="20" id="I9W-YU-Pmw"/>
+                                            <constraint firstItem="YW5-Jq-PKp" firstAttribute="leading" secondItem="E8T-2x-tYL" secondAttribute="leading" constant="20" id="PFI-hH-tDR"/>
+                                            <constraint firstItem="9nZ-Wg-z2u" firstAttribute="top" secondItem="YW5-Jq-PKp" secondAttribute="bottom" constant="12" id="XWw-5h-Mdz"/>
+                                            <constraint firstAttribute="trailing" secondItem="YW5-Jq-PKp" secondAttribute="trailing" constant="20" id="cl8-Dr-0t0"/>
+                                            <constraint firstItem="BcU-0N-TTi" firstAttribute="centerX" secondItem="Qh0-pQ-t9h" secondAttribute="centerX" id="fso-r0-14d"/>
+                                            <constraint firstItem="BcU-0N-TTi" firstAttribute="centerY" secondItem="Qh0-pQ-t9h" secondAttribute="centerY" id="hfh-xG-ua7"/>
+                                            <constraint firstItem="YW5-Jq-PKp" firstAttribute="top" secondItem="E8T-2x-tYL" secondAttribute="top" constant="42" id="jj5-NH-jzM"/>
+                                            <constraint firstAttribute="trailing" secondItem="9nZ-Wg-z2u" secondAttribute="trailing" constant="20" id="pRH-UU-JHx"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="E8T-2x-tYL" firstAttribute="width" secondItem="hNf-5q-FOd" secondAttribute="width" id="3V0-Y0-FSy"/>
+                                    <constraint firstItem="E8T-2x-tYL" firstAttribute="trailing" secondItem="1pQ-XC-9mX" secondAttribute="trailing" constant="240" id="C7e-rP-ASY"/>
+                                    <constraint firstItem="E8T-2x-tYL" firstAttribute="leading" secondItem="1pQ-XC-9mX" secondAttribute="leading" id="CyZ-9a-wqF"/>
+                                    <constraint firstItem="E8T-2x-tYL" firstAttribute="top" secondItem="1pQ-XC-9mX" secondAttribute="top" id="h08-3A-qwO"/>
+                                    <constraint firstItem="E8T-2x-tYL" firstAttribute="bottom" secondItem="1pQ-XC-9mX" secondAttribute="bottom" constant="128" id="oyd-y2-iYa"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="1pQ-XC-9mX"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="hNf-5q-FOd"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BHL-Uy-sXd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BHL-Uy-sXd" firstAttribute="trailing" secondItem="KTx-2e-eCY" secondAttribute="trailing" id="8bO-db-1e4"/>
+                            <constraint firstItem="E8T-2x-tYL" firstAttribute="height" secondItem="BHL-Uy-sXd" secondAttribute="height" id="BjV-Gs-4vI"/>
+                            <constraint firstItem="BHL-Uy-sXd" firstAttribute="bottom" secondItem="KTx-2e-eCY" secondAttribute="bottom" id="Znc-4b-kRw"/>
+                            <constraint firstItem="KTx-2e-eCY" firstAttribute="leading" secondItem="BHL-Uy-sXd" secondAttribute="leading" id="eig-o7-tEL"/>
+                            <constraint firstItem="KTx-2e-eCY" firstAttribute="top" secondItem="BHL-Uy-sXd" secondAttribute="top" id="xub-RL-GUq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bWq-e8-ET5"/>
+                    <connections>
+                        <outlet property="button" destination="Qh0-pQ-t9h" id="2mF-nZ-6Sn"/>
+                        <outlet property="catImage" destination="YW5-Jq-PKp" id="Gh3-u7-tBD"/>
+                        <outlet property="indicator" destination="BcU-0N-TTi" id="SSj-7c-eCt"/>
+                        <outlet property="scrollView" destination="KTx-2e-eCY" id="XPd-JT-C58"/>
+                        <outlet property="textField" destination="9nZ-Wg-z2u" id="aCl-9w-Nbw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I8T-St-qJf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="IIJ-Iu-0qr">
+                    <connections>
+                        <segue destination="kiK-x1-6xn" kind="presentation" identifier="OpenImage" id="a9L-Tf-nyX"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2033" y="15"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vyY-QH-TfX">
+            <objects>
+                <navigationController title="View Controller" id="Mbv-qn-0b3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Генератор котов" image="cat.circle" catalog="system" selectedImage="cat.circle.fill" id="tz8-MG-Llo">
+                        <color key="badgeColor" name="AccentColor"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dEP-Vg-isE">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" systemColor="labelColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="GbJ-5f-ZKQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pkr-JC-nBE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976" y="-775"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="XVN-dm-uo3">
+            <objects>
+                <tabBarController id="vo3-PJ-JuV" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AnX-XO-DL9">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="AccentColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Mbv-qn-0b3" kind="relationship" relationship="viewControllers" id="GAc-vS-Vj7"/>
+                        <segue destination="bYH-7e-1kA" kind="relationship" relationship="viewControllers" id="ZHt-hI-IUC"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UwE-4r-KR7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-40" y="-774"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="a9L-Tf-nyX"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="Image" width="1280" height="720"/>
+        <image name="cat.circle" catalog="system" width="128" height="123"/>
+        <image name="cat.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="text.bubble" catalog="system" width="128" height="110"/>
+        <image name="text.bubble.fill" catalog="system" width="128" height="110"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
