@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="K8S-oS-NnT">
-                                <rect key="frame" x="16" y="145" width="361" height="512"/>
+                                <rect key="frame" x="20" y="145" width="353" height="512"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="512" id="aLi-lW-ALB"/>
@@ -47,10 +47,10 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jyf-ns-egE" secondAttribute="trailing" constant="20" id="5Sq-lF-pjW"/>
                             <constraint firstItem="mYp-Rh-4gj" firstAttribute="centerY" secondItem="Jyf-ns-egE" secondAttribute="centerY" id="FXq-T4-g95"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K8S-oS-NnT" secondAttribute="trailing" constant="16" id="Qe9-x0-gCv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K8S-oS-NnT" secondAttribute="trailing" constant="20" id="Qe9-x0-gCv"/>
                             <constraint firstItem="K8S-oS-NnT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="ccI-Qo-qoB"/>
                             <constraint firstItem="Jyf-ns-egE" firstAttribute="top" secondItem="K8S-oS-NnT" secondAttribute="bottom" constant="16" id="jk1-nO-GGq"/>
-                            <constraint firstItem="K8S-oS-NnT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="pAx-gB-TNO"/>
+                            <constraint firstItem="K8S-oS-NnT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pAx-gB-TNO"/>
                             <constraint firstItem="mYp-Rh-4gj" firstAttribute="centerX" secondItem="Jyf-ns-egE" secondAttribute="centerX" id="wEI-Jl-Fgh"/>
                             <constraint firstItem="Jyf-ns-egE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="znd-Jl-CrY"/>
                         </constraints>
